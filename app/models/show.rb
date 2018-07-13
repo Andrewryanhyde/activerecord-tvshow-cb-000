@@ -2,4 +2,7 @@ class Show < ActiveRecord::Base
   def self.highest_rating
     self.maximum(:rating)
   end
+
+  def self.most_popular_show
+    self.order("rating DESC LIMIT 1")
 end
